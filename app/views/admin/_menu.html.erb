@@ -1,5 +1,5 @@
 <div class='news_menu' style="margin-top: 0px; margin-bottom: 20px;">
-<%= if params[:controller] != 'admin/news_entries' then link_to 'News Entries', { :controller => 'news_entries', :action => 'index' } else 'News Entries' end%> | 
-<%= if params[:controller] != 'admin/news_categories' then link_to 'News Category', { :controller => 'news_categories', :action => 'index' } else 'News Categories' end %> | 
-<%= if params[:controller] != 'admin/news_tags' then link_to 'News Tags', { :controller => 'news_tags', :action => 'index' } else 'News Entries' end %> 
+<%= if params[:controller] != 'admin/news_entries' then link_to t('news_entries'), { :controller => 'news_entries', :action => 'index' } else t('news_entries') end%> | 
+<%= if params[:controller] != 'admin/news_categories' then link_to t('news_categories'), { :controller => 'news_categories', :action => 'index' } else t('news_categories') end %> | 
+<%= if params[:controller] != 'admin/news_tags' then link_to t('news_tags'), { :controller => 'news_tags', :action => 'index' } else t('news_tags') end %> 
 </div>

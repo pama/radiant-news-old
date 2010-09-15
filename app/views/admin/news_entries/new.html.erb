@@ -1,49 +1,49 @@
 <% include_stylesheet 'admin/news/news' %>
-<h1>New News</h1>
+<h1><%= t('news_title_new') %></h1>
 
 <div id='main'>
   <div id='content'>
     <div class='form-area'>
       <% form_for [:admin, @news_entry] do |form|%>
         <p class='title'>
-          <%= form.label :headline %>
+          <%= form.label :headline, t('news_form_label_headline') %>
           <%= form.text_field :headline, :class => 'textbox', :maxlength => 255 %>
         </p>
         <p class='label'>
-          <%= form.label :leadtext %>
+          <%= form.label :leadtext, t('news_form_label_lead') %>
           <%= form.text_field :leadtext, :class => 'textbox', :maxlength => 255 %>
         </p>
         <p class='label'>
-          <%= form.label :text %>
+          <%= form.label :text, t('news_form_label_text') %>
           <%= form.text_area(:text, :cols => 60, :rows => 2, :class => "textarea") %>
         </p>
         <p class='label'>
-          <%= form.label "Tags (separated by comma)" %> 
+          <%= form.label t('news_form_label_tags') %> 
           <%= form.text_field "news_tags", :class => 'textbox', :maxlength => 255 %>
         </p>
         <p class='label'>
-		  <% if @news_categories%>
-          <%= form.label "Categories" %>
+        <% if @news_categories%>
+          <%= form.label t('news_form_label_categories') %>
           <% for category in @news_categories %>
-			  <%= check_box_tag "news_entry[news_category_ids][]", category.id, @news_entry.news_categories.include?(category) %>
-			  <%= category.name %>
-			<% end %>
-		  <% end %>
+          <%= check_box_tag "news_entry[news_category_ids][]", category.id, @news_entry.news_categories.include?(category) %>
+          <%= category.name %>
+          <% end %>
+        <% end %>
         </p>
         <p class='label'>
-          <%= form.label :start, t('start') %>
+          <%= form.label :start, t('news_form_label_start') %>
           <%= form.text_field :start, :class=> "date" %>
         </p>
         <p class='label'>
-          <%= form.label :stop, t('stop') %>
+          <%= form.label :stop, t('news_form_label_stop') %>
           <%= form.text_field :stop, :class=> "date" %>
         </p>
         <br />
         <p class="buttons">
           <%= save_model_button(@news_entry) %>
           <%= save_model_and_continue_editing_button(@news_entry) %>
-          or
-          <%= link_to "Cancel", {:action => :index} %>
+          <%= t('or') %>
+          <%= link_to t('news_button_cancel'), {:action => :index} %>
         </p>
     </div>
   </div>

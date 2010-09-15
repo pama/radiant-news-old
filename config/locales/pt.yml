@@ -1,4 +1,58 @@
 ---
 pt:
-  start: "Início"
-  stop: "Fim"
+  # menu
+  news_entries: "Notícias"
+  news_categories: "Categorias"
+  news_tags: "Marcadores"
+    
+  # news 
+  news_index_title: "Notícias"
+  news_list_empty: "Não existem notícias registadas."
+  news_add: "Adicionar nova notícia"  
+  news_title_new: "Nova notícia"
+  news_title_edit: "Editar"
+  news_form_label_headline: "Título"
+  news_form_label_lead: "Resumo ('Lead')"
+  news_form_label_text: "Texto"
+  news_form_label_tags: "Tags (saparadas por vírgula)"
+  news_form_label_categories: "Categorias"
+  news_form_label_start: "Início"
+  news_form_label_stop: "Fim"  
+  news_remove_title: "Remover notícia"
+  news_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta notícia?'
+  news_button_remove: "Remover notícia"
+    
+  # categories
+  news_categories_index_title: "Categorias"
+  news_categories_list_empty: "Não existem categorias registadas."
+  news_categories_add: "Adicionar nova categoria"
+  news_category_title_new: "Nova categoria"
+  news_category_title_edit: "Editar"
+  news_category_form_label_name: "Nome"  
+  news_category_remove_title: "Remover categoria"
+  news_category_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta categoria?'
+  news_category_button_remove: "Remover categoria"
+  
+  # tags
+  news_tags_index_title: "Marcadores"
+  news_tags_list_empty: "Não existem marcadores registados."
+  news_tags_add: "Adicionar novo marcador"
+  news_tag_title_new: "Novo marcador"
+  news_tag_title_edit: "Editar"
+  news_tag_form_label_name: "Nome"  
+  news_tag_remove_title: "Remover marcador"
+  news_tag_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> este marcador?'
+  news_tag_button_remove: "Remover marcador"
+  
+  # buttons
+  news_button_cancel: "Cancelar"    
+  
+  # links
+  news_link_remove_news_alt: "Remover notícias"
+  news_link_remove_category_alt: "Remover categoria"
+  news_link_remove_tag_alt: "Remover marcador"
+  
+  # models
+  news_entry: "Notícia"
+  news_category: "Categoria"
+  news_tag: "Marcador"

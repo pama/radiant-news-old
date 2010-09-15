@@ -1,4 +1,58 @@
 ---
 en:
-  start: "Start"
-  stop: "Stop"
+  # menu
+  news_entries: "News Entries"
+  news_categories: "News Category"
+  news_tags: "News Tags"
+
+  # news 
+  news_index_title: "News"
+  news_list_empty: "No news in database"
+  news_add: "Add New News"
+  news_title_new: "New News"
+  news_title_edit: "Edit"
+  news_form_label_headline: "Headline"
+  news_form_label_lead: "Lead Text"
+  news_form_label_text: "Text"
+  news_form_label_tags: "Tags (separated by comma)"
+  news_form_label_categories: "Categories"
+  news_form_label_start: "Start"
+  news_form_label_stop: "End"
+  news_remove_title: "Remove News"
+  news_remove_message: 'Are you sure you want to <strong class="warning">permanently remove</strong> the following news?'
+  news_button_remove: "Remove News"
+  
+  # categories
+  news_categories_index_title: "Categories"
+  news_categories_list_empty: "No categories in database"
+  news_categories_add: "Add New Category"
+  news_category_title_new: "New Category"
+  news_category_title_edit: "Edit"
+  news_category_form_label_name: "Name"  
+  news_category_remove_title: "Remove Category"
+  news_category_remove_message: 'Are you sure you want to <strong class="warning">permanently remove</strong> the following category?'
+  news_category_button_remove: "Remove Category"
+  
+  # tags
+  news_tags_index_title: "Tags"
+  news_tags_list_empty: "No tags in database"
+  news_tags_add: "Add New Tag"
+  news_tags_title_new: "New Tag"
+  news_tags_title_edit: "Edit"
+  news_tags_form_label_name: "Name"  
+  news_tags_remove_title: "Remove Tag"
+  news_tags_remove_message: 'Are you sure you want to <strong class="warning">permanently remove</strong> the following tag?'
+  news_tags_button_remove: "Remove Tag"
+  
+  # buttons
+  news_button_cancel: "Cancel"   
+  
+  # links
+  news_link_remove_news_alt: "Remove News"
+  news_link_remove_category_alt: "Remove Category"
+  news_link_remove_tag_alt: "Remove Tag"
+  
+  # models
+  news_entry: "News"
+  news_category: "Category"
+  news_tag: "Tag"
