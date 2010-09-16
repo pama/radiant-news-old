@@ -95,6 +95,13 @@ module NewsTags
   end
 
   desc %{
+    Returns ante headline of current news
+  }
+  tag 'news:ante_headline' do |tag|
+    tag.locals.news.ante_headline
+  end
+
+  desc %{
     Returns leadtext of current news
   }
   tag 'news:leadtext' do |tag|

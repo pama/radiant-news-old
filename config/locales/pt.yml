@@ -12,6 +12,7 @@ pt:
   news_title_new: "Nova notícia"
   news_title_edit: "Editar"
   news_form_label_headline: "Título"
+  news_form_label_ante_headline: "Antetítulo"
   news_form_label_lead: "Resumo ('Lead')"
   news_form_label_text: "Texto"
   news_form_label_tags: "Tags (saparadas por vírgula)"

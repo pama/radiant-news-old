@@ -8,6 +8,10 @@
       <%= form.text_field :headline, :class => 'textbox', :maxlength => 255 %>
     </p>
     <p class='label'>
+      <%= form.label :ante_headline, t('news_form_label_ante_headline') %>
+      <%= form.text_field :ante_headline, :class => 'textbox'%>
+    </p>
+    <p class='label'>
       <%= form.label :leadtext, t('news_form_label_lead') %>
       <%= form.text_area(:leadtext, :cols => 100, :rows => 5, :class => 'textarea', :style => "width: 100%") %>
     </p>

@@ -12,6 +12,7 @@ en:
   news_title_new: "New News"
   news_title_edit: "Edit"
   news_form_label_headline: "Headline"
+  news_form_label_ante_headline: "Ante-headline"
   news_form_label_lead: "Lead Text"
   news_form_label_text: "Text"
   news_form_label_tags: "Tags (separated by comma)"
