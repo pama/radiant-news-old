@@ -3,8 +3,8 @@
 
 class NewsExtension < Radiant::Extension
   version "1.0"
-  description "Extension for news administration in backend and different frontend views"
-  url "http://www.screenconcept.ch"
+  description "Extension for news administration"
+  url "http://github.com/pama/radiant-news-extension"
   
   define_routes do |map|
     map.namespace :admin, :member => { :remove => :get } do |admin|
@@ -15,12 +15,11 @@ class NewsExtension < Radiant::Extension
   end
   
   def activate
-    admin.tabs.add "News", "/admin/news_entries", :after => "Layouts", :visibility => [:all]
-    Page.send :include,  NewsTags
-  end
-  
-  def deactivate
-    admin.tabs.remove "News"
+    tab 'Content' do
+      add_item "News", "/admin/news_entries", :after => "Pages", :visibility => [:all]
+    end
+
+    Page.send :include, NewsTags
   end
   
 end
