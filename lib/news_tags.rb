@@ -1,5 +1,5 @@
 module NewsTags
-    include Radiant::Taggable
+  include Radiant::Taggable
 
   desc %{
     Gets scrolltext with active news.
