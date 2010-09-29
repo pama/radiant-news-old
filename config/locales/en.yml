@@ -5,23 +5,26 @@ en:
   news_categories: "News Category"
   news_tags: "News Tags"
 
-  # news 
-  news_index_title: "News"
-  news_list_empty: "No news in database"
+  # news
   news_add: "Add New News"
-  news_title_new: "New News"
-  news_title_edit: "Edit"
-  news_form_label_headline: "Headline"
+  news_button_remove: "Remove News"
   news_form_label_ante_headline: "Ante-headline"
-  news_form_label_lead: "Lead Text"
-  news_form_label_text: "Text"
-  news_form_label_tags: "Tags (separated by comma)"
   news_form_label_categories: "Categories"
+  news_form_label_headline: "Headline"
+  news_form_label_lead: "Lead Text"
+  news_form_label_photo_lead_text: 'Lead text image'
+  news_form_label_photo_text: "Text image"
   news_form_label_start: "Start"
   news_form_label_stop: "End"
-  news_remove_title: "Remove News"
+  news_form_label_tags: "Tags (separated by comma)"
+  news_form_label_text: "Text"
+  news_form_photo_text_caption: 'Text image caption'
+  news_index_title: "News"
+  news_list_empty: "No news in database"
   news_remove_message: 'Are you sure you want to <strong class="warning">permanently remove</strong> the following news?'
-  news_button_remove: "Remove News"
+  news_remove_title: "Remove News"
+  news_title_edit: "Edit"
+  news_title_new: "New News"
   
   # categories
   news_categories_index_title: "Categories"

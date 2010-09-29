@@ -2,48 +2,6 @@
 <h1><%= t('news_title_edit') %>: <%= @news_entry.headline %></h1>
 
 <div class='form-area'>
-  <% form_for [:admin, @news_entry] do |form| %>
-    <p class='title'>
-      <%= form.label :headline, t('news_form_label_headline') %>
-      <%= form.text_field :headline, :class => 'textbox', :maxlength => 255 %>
-    </p>
-    <p class='label'>
-      <%= form.label :ante_headline, t('news_form_label_ante_headline') %>
-      <%= form.text_field :ante_headline, :class => 'textbox'%>
-    </p>
-    <p class='label'>
-      <%= form.label :leadtext, t('news_form_label_lead') %>
-      <%= form.text_area(:leadtext, :cols => 100, :rows => 5, :class => 'textarea', :style => "width: 100%") %>
-    </p>
-    <p class='label'>
-      <%= form.label :text, t('news_form_label_text') %>
-      <%= form.text_area(:text, :cols => 100, :rows => 15, :class => 'textarea', :style => "width: 100%") %>
-    </p>
-    <p class='label'>
-      <%= form.label t('news_form_label_tags') %>
-      <%= form.text_field "news_tags", :class => 'textbox', :maxlength => 255, :value => @news_entry.news_tags * ", " %>
-    </p>
-    <p class='label'>
-      <%= form.label "Categories", t('news_form_label_categories') %>
-      <% for category in @news_categories %>
-        <%= check_box_tag "news_entry[news_category_ids][]", category.id, @news_entry.news_categories.include?(category) %>
-        <%= category.name %>
-      <% end %>
-    </p>
-    <p class='label'>
-      <%= form.label :start, t('news_form_label_start') %>
-      <%= form.text_field :start, :class=> "date" %>
-    </p>
-    <p class='label'>
-      <%= form.label :stop, t('news_form_label_stop') %>
-      <%= form.text_field :stop, :class=> "date" %>
-    </p>
-    <p class="buttons">
-      <%= save_model_button(@news_entry) %>
-      <%= save_model_and_continue_editing_button(@news_entry) %>
-      <%= t('or') %>
-      <%= link_to t('news_button_cancel'), {:action => :index} %>
-    </p>
-  <% end %>
+  <%= render :partial => 'form' %>
 </div>
 

@@ -114,6 +114,39 @@ module NewsTags
   tag 'news:text' do |tag|
     tag.locals.news.text
   end
+
+  desc %{
+    If text image url exists
+  }
+  tag 'news:if_text_image' do |tag|
+    if tag.locals.news.photo_text.file?
+      tag.expand
+    end
+  end
+
+  desc %{
+    Returns text image url of current news
+  }
+  tag 'news:text_image' do |tag|
+    tag.locals.news.photo_text
+  end
+
+  desc %{
+    If lead image url exists
+  }
+  tag 'news:if_lead_image' do |tag|
+    if tag.locals.news.photo_lead.file?
+      tag.expand
+    end
+  end
+
+  desc %{
+    Returns text image url of current news
+  }
+  tag 'news:lead_image' do |tag|
+    tag.locals.news.lead_text
+  end
+
   
   desc %{
     Returns link to current news
