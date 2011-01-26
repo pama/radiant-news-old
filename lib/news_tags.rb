@@ -150,13 +150,24 @@ module NewsTags
   
   desc %{
     Returns link to current news
+    
+    *Usage:*
+    <pre><code>
+      <r:news:link [class="class_name"]>
+      
+    </code></pre>
   }
   tag 'news:link' do |tag|
+    #process class
+    class_arg = tag.attr["class"] if tag.attr["class"]  
+    
     result = ""
     url = NewsEntryPage.first.url if NewsEntryPage.first
     if url
       id = tag.locals.news.id
-      result = "<a href=\"#{url}?entry_id=#{id}\">"
+      result = "<a href=\"#{url}?entry_id=#{id}\""
+      result += "class=\"#{class_arg}\"" if class_arg
+      result += ">"
       result << tag.expand
       result << %{</a>}
     end
