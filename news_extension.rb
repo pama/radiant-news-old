@@ -7,8 +7,11 @@ class NewsExtension < Radiant::Extension
   url "http://github.com/pama/radiant-news-extension"
   
   def activate
-    tab 'Content' do
-      add_item "News", "/admin/news_entries", :after => "Pages", :visibility => [:all]
+    admin.nav << Radiant::AdminUI::NavTab.new("News")
+    tab 'News' do
+      add_item "News", "/admin/news/news_entries"
+      add_item "Categories", "/admin/news/news_categories"
+      add_item "Tags", "/admin/news/news_tags"      
     end
 
     Page.send :include, NewsTags
