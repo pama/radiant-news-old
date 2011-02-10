@@ -132,6 +132,13 @@ module NewsTags
   end
 
   desc %{
+    Returns text caption for text image
+  }
+  tag 'news:text_caption' do |tag|
+    tag.locals.news.photo_text_caption
+  end
+
+  desc %{
     If lead image url exists
   }
   tag 'news:if_lead_image' do |tag|
@@ -144,7 +151,7 @@ module NewsTags
     Returns text image url of current news
   }
   tag 'news:lead_image' do |tag|
-    tag.locals.news.lead_text
+    tag.locals.news.photo_lead.url
   end
 
   
@@ -170,6 +177,26 @@ module NewsTags
       result += ">"
       result << tag.expand
       result << %{</a>}
+    end
+    result
+  end
+  
+  desc %{
+    Returns the full url for the actual news entry
+    
+    *Usage:*
+    <pre><code>
+      <r:news:url />
+      
+    </code></pre>
+  }
+  tag 'news:url' do |tag|
+    
+    result = ""
+    url = NewsEntryPage.first.url if NewsEntryPage.first
+    if url
+      id = tag.locals.news.id
+      result = "#{url}?entry_id=#{id}\""      
     end
     result
   end
