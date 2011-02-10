@@ -21,6 +21,8 @@ pt:
   news_form_photo_text_caption: 'Legenda da imagem do texto'
   news_index_title: "Notícias"
   news_list_empty: "Não existem notícias registadas."
+  news_list_name: "Nome"
+  news_list_start: "Início"
   news_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta notícia?'
   news_remove_title: "Remover notícia"
   news_title_edit: "Editar"
@@ -29,6 +31,7 @@ pt:
   # categories
   news_categories_index_title: "Categorias"
   news_categories_list_empty: "Não existem categorias registadas."
+  news_categories_list_name: "Nome"
   news_categories_add: "Adicionar nova categoria"
   news_category_title_new: "Nova categoria"
   news_category_title_edit: "Editar"
@@ -40,6 +43,7 @@ pt:
   # tags
   news_tags_index_title: "Marcadores"
   news_tags_list_empty: "Não existem marcadores registados."
+  news_tags_list_name: "Nome"
   news_tags_add: "Adicionar novo marcador"
   news_tag_title_new: "Novo marcador"
   news_tag_title_edit: "Editar"

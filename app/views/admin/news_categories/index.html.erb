@@ -1,22 +1,43 @@
-<h1><%= t('news_categories_index_title') %></h1>
-<% if @news_categories.blank? %>
-  <p><%= t('news_categories_list_empty')%></p>
-<% else %>
-<u1>
-    <table  class="index" >
-       <% @news_categories.each do |category| %>
-       <tr  class="node level-0">
-         <td class="page"><%= link_to  category.name, { :action => 'edit', :id => category.id } %></td>
-         <td class="remove"><%= link_to image('remove', :alt => t('news_link_remove_category_alt')), remove_admin_news_category_url(:id => category.id) %></td>
-       </tr>
-      <%end%>
-    </table>
-</u1>
-<div id="pagination" style='margin: 10px'>
-<%= will_paginate @news_categories %>
+<div class="outset">
+  <table class="index" id="site_map" summary="list of book authors">
+    <thead>
+      <tr>
+        <th class="layout"><%= t('news_categories_list_name') %></th>
+        <th class="modify"><%= t('modify') %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% if @news_categories.any? -%>
+      <% @news_categories.each do |category| -%>
+      <tr class="node level_1">
+        <td class="layout">
+          <%= link_to category.name, edit_admin_news_category_url(category) %>
+        </td>
+        <td class="remove">
+          <%= link_to t('remove'), remove_admin_news_category_url(category), :class => "action"  %>
+        </td>
+      </tr>
+      <% end -%>
+    <% else -%>
+      <tr class="node level_1">
+        <td>
+          <%= t('news_categories_list_empty') %>
+        </td>
+        <td class="remove"></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  
+  <div id="pagination" style='margin: 10px'>
+    <%= will_paginate @news_categories %>
+  </div>
+
+  <div id="actions">
+    <ul>
+      <li>
+        <%= link_to image('plus') + " " + t('news_categories_add'), new_admin_news_category_url %>
+      </li>
+    </ul>
+  </div>
 </div>
-<%- end %>
-
-<%#= ActionController::Base.instance_methods.sort.join("\n") %>
-
-<%= link_to t('news_categories_add'), { :action => 'new' } %>

@@ -1,22 +1,3 @@
-<% include_stylesheet 'admin/news/news' %>
-<h1><%= t('news_category_title_edit') %>: <%= @news_category.name %></h1>
+<h1><%= t('news_category_title_edit') %></h1>
 
-<div id='main'>
-  <div id='content'>
-    <div class='form-area'>
-      <% form_for [:admin, @news_category] do |form|%>
-        <p class='title'>
-          <%= form.label :name, t('news_category_form_label_name') %>
-          <%= form.text_field :name, :class => 'textbox', :maxlength => 255 %>
-        </p>
-        <br />
-        <p class="buttons">
-          <%= save_model_button(@news_category) %>
-          <%= save_model_and_continue_editing_button(@news_category) %>
-          <%= t('or') %>
-          <%= link_to t('news_button_cancel'), {:action => :index} %>
-        </p>
-    </div>
-  </div>
-</div>
-<%end%>
+<%=  render :partial => 'form' %>

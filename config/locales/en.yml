@@ -21,6 +21,8 @@ en:
   news_form_photo_text_caption: 'Text image caption'
   news_index_title: "News"
   news_list_empty: "No news in database"
+  news_list_name: "Name"
+  news_list_start: "Start"
   news_remove_message: 'Are you sure you want to <strong class="warning">permanently remove</strong> the following news?'
   news_remove_title: "Remove News"
   news_title_edit: "Edit"
@@ -29,7 +31,8 @@ en:
   # categories
   news_categories_index_title: "Categories"
   news_categories_list_empty: "No categories in database"
-  news_categories_add: "Add New Category"
+  news_categories_list_name: "Name"
+  news_categories_add: "Add New Category"  
   news_category_title_new: "New Category"
   news_category_title_edit: "Edit"
   news_category_form_label_name: "Name"  
@@ -40,6 +43,7 @@ en:
   # tags
   news_tags_index_title: "Tags"
   news_tags_list_empty: "No tags in database"
+  news_tags_list_name: "Name"
   news_tags_add: "Add New Tag"
   news_tags_title_new: "New Tag"
   news_tags_title_edit: "Edit"

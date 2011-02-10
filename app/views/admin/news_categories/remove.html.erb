@@ -6,7 +6,7 @@
   <tbody>
     <tr class="node level-1">
       <td class="news">
-           <%= @news_category.name %>
+        <%= @news_category.name %>
       </td>
     </tr>
   </tbody>
@@ -16,6 +16,6 @@
   <p class="buttons">
     <input class="button" type="submit" value="<%= t('news_category_button_remove') %>"/>
     <%= t('or') %>
-    <%= link_to t('news_button_cancel'), admin_news_category_url %>
+    <%= link_to t('news_button_cancel'), admin_news_categories_url %>
   </p>
 <%- end -%>
