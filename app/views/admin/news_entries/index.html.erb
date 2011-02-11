@@ -1,4 +1,14 @@
 <div class="outset">
+  <div>
+    <% form_tag [:admin, 'news_entries'], :method => :get, :html => { :multipart => true } do |form| -%>
+      <label for="category_id"><%= t('news_search_label_headline') %></label>
+      <%= text_field_tag :headline_text, request[:headline_text] %>
+    
+      <label for="category_id"><%= t('news_search_label_category') %></label>
+      <%= select_tag :category_id, '<option value="0">' + t('news_search_category_select') + '</option>' + options_from_collection_for_select(@news_categories, 'id', 'name', Integer(params[:category_id])), :class => 'textarea' %>
+      <input type="submit" value="Filtrar" />
+    <% end -%>
+  </div>
   <table class="index" id="site_map" summary="list of book authors">
     <thead>
       <tr>
@@ -28,7 +38,7 @@
       <% end -%>
     <% else -%>
       <tr class="node level_1">
-        <td>
+        <td colspan="3">
           <%= t('news_list_empty') %>
         </td>
         <td class="remove"></td>

@@ -25,6 +25,9 @@ pt:
   news_list_start: "Início"
   news_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta notícia?'
   news_remove_title: "Remover notícia"
+  news_search_category_select: "Todas as categories"
+  news_search_label_category: "Categoria"
+  news_search_label_headline: "Título"
   news_title_edit: "Editar"
   news_title_new: "Nova notícia"
 

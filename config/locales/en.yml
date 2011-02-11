@@ -25,6 +25,9 @@ en:
   news_list_start: "Start"
   news_remove_message: 'Are you sure you want to <strong class="warning">permanently remove</strong> the following news?'
   news_remove_title: "Remove News"
+  news_search_category_select: "All Categories"
+  news_search_label_category: "Category"  
+  news_search_label_headline: "Headline"  
   news_title_edit: "Edit"
   news_title_new: "New News"
   

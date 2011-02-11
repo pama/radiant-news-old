@@ -22,11 +22,35 @@ class Admin::NewsEntriesController <  Admin::ResourceController
   def new
     @news_categories = NewsCategory.find(:all, :order => "name ASC")
   end
+  
   def edit
     @news_categories = NewsCategory.find(:all, :order => "name ASC")    
   end
   
   def index
-    @news_entries = NewsEntry.paginate :page => params[:page], :per_page => 10
+    
+    # TODO: this filter code should be improved    
+    conditions = ""
+    conditions_arr = [] 
+    
+    if params[:headline_text] != nil and params[:headline_text] != ""             
+      conditions += "headline LIKE ?"
+      conditions_arr << "%" + params[:headline_text] + "%"
+    end
+    
+    if params[:category_id] != nil and Integer(params[:category_id]) != 0
+      if conditions != ""
+        conditions += " AND "
+      end
+      
+      conditions += "news_categories.id = ?"
+      conditions_arr << params[:category_id]
+
+      @news_entries = NewsEntry.paginate :page => params[:page], :per_page => 10, :include => 'news_categories', :conditions => [conditions] + conditions_arr, :order => "start DESC"
+    else      
+      @news_entries = NewsEntry.paginate :page => params[:page], :per_page => 10, :conditions => [conditions] + conditions_arr, :order => "start DESC"
+    end
+  
+    @news_categories = NewsCategory.find(:all, :order => "name ASC")
   end
 end
