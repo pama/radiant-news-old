@@ -1,0 +1,21 @@
+<h1><%= t('news_video_remove_title') %></h1>
+
+<p><%= t('news_video_remove_message') %></p>
+
+<table class="index" cellpadding="0" cellspacing="0" border="0">
+  <tbody>
+    <tr class="node level-1">
+      <td class="news">
+        <%= @news_video.title %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<% form_for [:admin, @news_video], :html => { :method => 'delete' } do %>
+  <p class="buttons">
+    <input class="button" type="submit" value="<%= t('news_video_button_remove') %>"/>
+    <%= t('or') %>
+    <%= link_to t('cancel'), admin_news_videos_url %>
+  </p>
+<%- end -%>

@@ -7,6 +7,7 @@ pt:
   news_tags: "Marcadores"
   news_galleries: "Galerias"
   news_gallery_images: "Imagens de Galerias"
+  news_videos: "Vídeos"
     
   # news
   news_add: "Adicionar nova notícia"
@@ -69,8 +70,6 @@ pt:
   news_gallery_item_remove_title: 'Remover imagem'
   news_gallery_item_remove_message: 'Tem a certeza que pretende <strong class="warning">remover permanentemente</strong> esta imagem?'
   news_gallery_item_title_new: "Adicionar imagem à galeria"
-  
-
 
   # tags
   news_tags_index_title: "Marcadores"
@@ -83,6 +82,20 @@ pt:
   news_tag_remove_title: "Remover marcador"
   news_tag_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> este marcador?'
   news_tag_button_remove: "Remover marcador"
+
+  #videos
+  news_video_add: "Adicionar Vídeo"
+  news_video_button_remove: "Remover Vídeo"
+  news_video_remove_title: "Remover Vídeo"
+  news_video_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta vídeo?'
+  news_video_list_empty: 'Não existem vídeos registados'
+  news_video_list_title: "Título"
+  news_video_form_label_title: "Título"
+  news_video_form_label_ante_title: "Antetítulo"
+  news_video_form_label_description: "Descrição"
+  news_video_form_label_video_url: "Endereço do vídeo"
+  news_video_title_edit: "Editar"
+  news_video_title_new: "Novo vídeo"
 
   # buttons
   news_button_cancel: "Cancelar"    

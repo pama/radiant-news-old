@@ -6,8 +6,8 @@ en:
   news_categories: "News Category"
   news_tags: "News Tags"
   news_galleries: "Galleries"
-  mews_gallery_images: "Gallery Images"
-
+  news_gallery_images: "Gallery Images"
+  news_videos: "Videos"
 
   # news
   news_add: "Add New News"

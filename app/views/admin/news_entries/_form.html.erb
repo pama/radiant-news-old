@@ -17,7 +17,7 @@
   </p>
   <p class='label'>
     <%= form.label t('news_form_label_tags') %>
-    <%= form.text_field "news_tags", :class => 'textbox', :maxlength => 255 %>
+    <%= form.text_field "news_tags", :class => 'textbox', :maxlength => 255, :style => "width: 100%" %>
   </p>
   <p class='label'>
   <% if @news_categories -%>
@@ -38,7 +38,7 @@
   </p>
   <p class='label'>
     <%= form.label :photo_text_caption, t('news_form_photo_text_caption') %>
-    <%= form.text_field :photo_text_caption, :style => "width: 100%" %>
+    <%= form.text_field :photo_text_caption, :class => 'textbox', :style => "width: 100%" %>
   </p>
   <p class='label'>
     <%= form.label :photo_text, t('news_form_label_photo_text') %>

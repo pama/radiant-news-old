@@ -14,6 +14,7 @@ class NewsExtension < Radiant::Extension
       add_item I18n.t("news_tags"), "/admin/news/news_tags"
       add_item I18n.t("news_galleries"), "/admin/news/galleries"
       add_item I18n.t("news_gallery_images"), "/admin/news/gallery_items"
+      add_item I18n.t("news_videos"), "/admin/news/news_videos"
     end
 
     Page.send :include, NewsTags

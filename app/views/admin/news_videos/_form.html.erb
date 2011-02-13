@@ -1,0 +1,26 @@
+<% form_for [:admin, @news_video] do |form|%>
+  <p class='title'>
+    <%= form.label :title, t('news_video_form_label_title') %>
+    <%= form.text_field :title, :class => 'textbox', :maxlength => 255, :style => "width: 100%" %>
+  </p>
+  <p class='label'>
+    <%= form.label :ante_title, t('news_video_form_label_ante_title') %>
+    <%= form.text_field :ante_title, :class => 'textbox', :maxlength => 255, :style => "width: 100%" %>
+  </p>
+  <p class='label'>
+    <%= form.label :description, t('news_video_form_label_description') %>
+    <%= form.text_area :description, :class => 'texarea', :cols => 100, :rows => 30, :style => "width: 100%" %>
+  </p>
+  <p class='label'>
+    <%= form.label :video_url, t('news_video_form_label_video_url') %>
+    <%= form.text_field :video_url, :class => 'textbox', :maxlength => 255, :style => "width: 100%" %>
+  </p>
+
+  <br />
+  <p class="buttons">
+    <%= save_model_button(@news_video) %>
+    <%= save_model_and_continue_editing_button(@news_video) %>
+    <%= t('or') %>
+    <%= link_to t('news_button_cancel'), {:action => :index} %>
+  </p>
+<% end %>
