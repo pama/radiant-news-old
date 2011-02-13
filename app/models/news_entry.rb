@@ -4,6 +4,7 @@ class NewsEntry < ActiveRecord::Base
 
   has_attached_file :photo_text, :url => "/media/news/:attachment/:id/:style_:basename.:extension"
   has_attached_file :photo_lead, :url => "/media/news/:attachment/:id/:style_:basename.:extension"
+  belongs_to             :gallery
 
   validates_presence_of  :headline
   validates_presence_of  :leadtext

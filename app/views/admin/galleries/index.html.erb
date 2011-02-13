@@ -1,0 +1,43 @@
+<div class="outset">
+  <table class="index" id="site_map" summary="list of book authors">
+    <thead>
+      <tr>
+        <th class="layout"><%= t('news_gallery_list_name') %></th>
+        <th class="modify"><%= t('modify') %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% if @galleries.any? -%>
+      <% @galleries.each do |item| -%>
+      <tr class="node level_1">
+        <td class="layout">
+          <%= link_to item.name, edit_admin_gallery_url(item) %>
+        </td>
+        <td class="remove">          
+          <%= link_to t('remove'), remove_admin_gallery_url(item), :class => "action"  %>
+        </td>
+      </tr>
+      <% end -%>
+    <% else -%>
+      <tr class="node level_1">
+        <td>
+          <%= t('news_gallery_list_empty') %>
+        </td>
+        <td class="remove"></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  
+  <div id="pagination" style='margin: 10px'>
+    <%= will_paginate @galleries %>
+  </div>
+
+  <div id="actions">
+    <ul>
+      <li>
+        <%= link_to image('plus') + " " + t('news_gallery_add'), new_admin_gallery_url %>
+      </li>
+    </ul>
+  </div>
+</div>

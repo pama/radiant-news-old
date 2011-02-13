@@ -42,7 +42,31 @@ en:
   news_category_remove_title: "Remove Category"
   news_category_remove_message: 'Are you sure you want to <strong class="warning">permanently remove</strong> the following category?'
   news_category_button_remove: "Remove Category"
+
+  # Gallery
+  news_gallery_add: "Add gallery"
+  news_gallery_button_remove: "Remove gallery"
+  news_gallery_remove_title: "Remove galery"
+  news_gallery_remove_message: 'Are you sure you want to <strong class="warning">permanently remove</strong> the following gallery?'
+  news_gallery_list_empty: 'No galleries in database'
+  news_gallery_list_name: "Name"
+  news_gallery_form_label_name: "Name"
+  news_gallery_title_edit: "Edit"
+  news_gallery_title_new: "New gallery"
   
+  # Gallery items
+  news_gallery_add: "Add image"
+  news_gallery_item_button_remove: "Remove image"
+  news_gallery_item_form_label_description: "Title"
+  news_gallery_item_form_label_gallery: "Gallery"
+  news_gallery_item_form_label_photo: "Image"
+  news_gallery_item_list_description: "Title"
+  news_gallery_item_list_empty: 'No images in database'
+  news_gallery_item_list_gallery: "Gallery"
+  news_gallery_item_remove_title: 'Remove image'
+  news_gallery_item_remove_message: 'Are you sure you want to <strong class="warning">permanently remove</strong> the following image?'
+  news_gallery_item_title_new: "Add image to gallery"
+ 
   # tags
   news_tags_index_title: "Tags"
   news_tags_list_empty: "No tags in database"

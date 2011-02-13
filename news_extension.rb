@@ -11,7 +11,9 @@ class NewsExtension < Radiant::Extension
     tab 'News' do
       add_item "News", "/admin/news/news_entries"
       add_item "Categories", "/admin/news/news_categories"
-      add_item "Tags", "/admin/news/news_tags"      
+      add_item "Tags", "/admin/news/news_tags"
+      add_item "Galleries", "/admin/news/galleries"
+      add_item "GalleryItems", "/admin/news/gallery_items"
     end
 
     Page.send :include, NewsTags

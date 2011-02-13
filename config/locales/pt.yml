@@ -43,6 +43,32 @@ pt:
   news_category_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta categoria?'
   news_category_button_remove: "Remover categoria"
   
+  # Gallery
+  news_gallery_add: "Adicionar galeria"
+  news_gallery_button_remove: "Remover galeria"
+  news_gallery_remove_title: "Remover galeria"
+  news_gallery_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta galeria?'
+  news_gallery_list_empty: 'Não existem galerias registadas'
+  news_gallery_list_name: "Nome"
+  news_gallery_form_label_name: "Nome"
+  news_gallery_title_edit: "Editar"
+  news_gallery_title_new: "Nova galeria"
+  
+  # Gallery items
+  news_gallery_add: "Adicionar imagem"
+  news_gallery_item_button_remove: "Remover imagem"
+  news_gallery_item_form_label_description: "Título"
+  news_gallery_item_form_label_gallery: "Galeria"
+  news_gallery_item_form_label_photo: "Imagem"
+  news_gallery_item_list_description: "Título"
+  news_gallery_item_list_empty: 'Não existem imagens registadas'
+  news_gallery_item_list_gallery: "Galeria"
+  news_gallery_item_remove_title: 'Remover imagem'
+  news_gallery_item_remove_message: 'Tem a certeza que pretende <strong class="warning">remover permanentemente</strong> esta imagem?'
+  news_gallery_item_title_new: "Adicionar imagem à galeria"
+  
+
+
   # tags
   news_tags_index_title: "Marcadores"
   news_tags_list_empty: "Não existem marcadores registados."
@@ -54,7 +80,7 @@ pt:
   news_tag_remove_title: "Remover marcador"
   news_tag_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> este marcador?'
   news_tag_button_remove: "Remover marcador"
-  
+
   # buttons
   news_button_cancel: "Cancelar"    
   
