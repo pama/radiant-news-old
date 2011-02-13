@@ -1,9 +1,13 @@
 ---
 en:
-  # menu
+  # Menu
+  news_header: "News"
   news_entries: "News Entries"
   news_categories: "News Category"
   news_tags: "News Tags"
+  news_galleries: "Galleries"
+  mews_gallery_images: "Gallery Images"
+
 
   # news
   news_add: "Add New News"

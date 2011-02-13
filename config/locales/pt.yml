@@ -1,9 +1,12 @@
 ---
 pt:
-  # menu
+  # Menu
+  news_header: "Notícias"
   news_entries: "Notícias"
   news_categories: "Categorias"
   news_tags: "Marcadores"
+  news_galleries: "Galerias"
+  news_gallery_images: "Imagens de Galerias"
     
   # news
   news_add: "Adicionar nova notícia"
