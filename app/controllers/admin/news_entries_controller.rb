@@ -21,10 +21,14 @@ class Admin::NewsEntriesController <  Admin::ResourceController
   
   def new
     @news_categories = NewsCategory.find(:all, :order => "name ASC")
+    @news_videos = NewsVideo.find(:all, :order => "title ASC")
+    @galleries = Gallery.find(:all, :order => "name ASC")
   end
   
   def edit
-    @news_categories = NewsCategory.find(:all, :order => "name ASC")    
+    @news_categories = NewsCategory.find(:all, :order => "name ASC")
+    @news_videos = NewsVideo.find(:all, :order => "title ASC")
+    @galleries = Gallery.find(:all, :order => "name ASC")
   end
   
   def index

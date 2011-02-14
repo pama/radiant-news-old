@@ -16,6 +16,8 @@ pt:
   news_form_label_categories: "Categorias"
   news_form_label_headline: "Título"
   news_form_label_lead: "Resumo ('Lead')"
+  news_form_label_news_video: "Vídeo"
+  news_form_label_gallery: "Galeria"
   news_form_label_photo_lead_text: 'Imagem do resumo'
   news_form_label_photo_text: "Imagem do texto"
   news_form_label_start: "Início"

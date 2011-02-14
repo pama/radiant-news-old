@@ -52,6 +52,15 @@
     <br />
     <%= image_tag @news_entry.photo_lead.url if @news_entry.photo_lead.file? %>
   </p>
+  <p class='label'>
+    <%= form.label :news_video_id, t('news_form_label_news_video') %>
+    <%= form.select :news_video_id, @news_videos.collect {|p| [ p.title, p.id ] }, { :include_blank => true }  %>
+  </p>
+  <p class='label'>
+    <%= form.label :gallery_id, t('news_form_label_gallery') %>
+    <%= form.select :gallery_id, @galleries.collect {|p| [ p.name, p.id ] }, { :include_blank => true }  %>
+  </p>
+
   <p class="buttons">
     <%= save_model_button(@news_entry) %>
     <%= save_model_and_continue_editing_button(@news_entry) %>

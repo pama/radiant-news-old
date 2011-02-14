@@ -16,6 +16,8 @@ en:
   news_form_label_categories: "Categories"
   news_form_label_headline: "Headline"
   news_form_label_lead: "Lead Text"
+  news_form_label_gallery: "Gallery"
+  news_form_label_video: 'Video'
   news_form_label_photo_lead_text: 'Lead text image'
   news_form_label_photo_text: "Text image"
   news_form_label_start: "Start"
