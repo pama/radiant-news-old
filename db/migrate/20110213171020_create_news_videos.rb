@@ -5,6 +5,7 @@ class CreateNewsVideos < ActiveRecord::Migration
       t.string :ante_title
       t.text   :description
       t.string :video_url
+      t.boolean :show_in_main_page
   
       t.timestamps
     end

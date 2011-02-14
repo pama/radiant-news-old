@@ -15,6 +15,10 @@
     <%= form.label :video_url, t('news_video_form_label_video_url') %>
     <%= form.text_field :video_url, :class => 'textbox', :maxlength => 255, :style => "width: 100%" %>
   </p>
+  <p>
+    <%= form.check_box :show_in_main_page, :class => 'checkbox' %>
+    <%= form.label :show_in_main_page, 'página principal', :class => 'checkbox' %>
+  </p>
 
   <br />
   <p class="buttons">
