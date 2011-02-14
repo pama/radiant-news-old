@@ -208,6 +208,47 @@ module NewsTags
     tag.locals.news.start
   end
 
+  #
+  # video
+  #
+
+  desc %{
+    If video exists
+  }
+  tag 'news:if_video' do |tag|
+    if tag.locals.news.news_video != nil
+      tag.expand
+    end
+  end
+
+  desc %{
+    Get video url
+  }
+  tag 'news:video_url' do |tag|
+    tag.locals.news.news_video.video_url
+  end
+
+  desc %{
+    Get video title
+  }
+  tag 'news:video_title' do |tag|
+    tag.locals.news.news_video.title
+  end
+
+  desc %{
+    Get video ante title
+  }
+  tag 'news:video_ante_title' do |tag|
+    tag.locals.news.news_video.ante_title
+  end
+  
+  desc %{
+    Get video description
+  }
+  tag 'news:video_description' do |tag|
+    tag.locals.news.news_video.description
+  end
+
   def currentnews(parameter)
     curr_date = Time.now
     str_conditions = 'start <=  ? and (stop is null or stop >= ?)'
@@ -230,11 +271,14 @@ module NewsTags
         arr_table_join += ['news_tags']
       end
     end
+
+    arr_table_join += ['news_video']
     
     find_parameters = {:conditions => [str_conditions] + arr_parameter, :order => 'start DESC, news_entries.id DESC'}    
     find_parameters.merge!({:include => arr_table_join}) if arr_table_join
     find_parameters.merge!({:limit => parameter[:limit]}) if parameter[:limit]
     find_parameters.merge!({:offset => parameter[:offset]}) if parameter[:offset]
+
     NewsEntry.find(:all, find_parameters)
   end
 end
