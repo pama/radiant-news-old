@@ -1,20 +1,20 @@
 <div class="outset">
   <div>
     <% form_tag [:admin, 'news_entries'], :method => :get, :html => { :multipart => true } do |form| -%>
-      <label for="category_id"><%= t('news_search_label_headline') %></label>
+      <label for="category_id"><%= t('news.news_entry.search.headline') %></label>
       <%= text_field_tag :headline_text, request[:headline_text] %>
     
-      <label for="category_id"><%= t('news_search_label_category') %></label>
-      <%= select_tag :category_id, '<option value="0">' + t('news_search_category_select') + '</option>' + options_from_collection_for_select(@news_categories, 'id', 'name', Integer(params[:category_id])), :class => 'textarea' %>
-      <input type="submit" value="Filtrar" />
+      <label for="category_id"><%= t('news.news_entry.search.category') %></label>
+      <%= select_tag :category_id, '<option value="0">' + t('news.news_entry.search.category_select') + '</option>' + options_from_collection_for_select(@news_categories, 'id', 'name', Integer(params[:category_id])), :class => 'textarea' %>
+      <input type="submit" value="<%= t('news.news_entry.buttons.filter') %>" />
     <% end -%>
   </div>
   <table class="index" id="site_map" summary="list of book authors">
     <thead>
       <tr>
         <th width="30" class="layout"></th>
-        <th class="layout"><%= t('news_list_name') %></th>        
-        <th class="modify"><%= t('news_list_start') %></th>
+        <th class="layout"><%= t('news.news_entry.list.name') %></th>        
+        <th class="modify"><%= t('news.news_entry.list.start') %></th>
         <th class="modify"><%= t('modify') %></th>
       </tr>
     </thead>
@@ -39,7 +39,7 @@
     <% else -%>
       <tr class="node level_1">
         <td colspan="3">
-          <%= t('news_list_empty') %>
+          <%= t('news.news_entry.list.empty') %>
         </td>
         <td class="remove"></td>
       </tr>
@@ -54,7 +54,7 @@
   <div id="actions">
     <ul>
       <li>
-        <%= link_to image('plus') + " " + t('news_add'), new_admin_news_entry_url %>
+        <%= link_to image('plus') + " " + t('news.news_entry.buttons.add'), new_admin_news_entry_url %>
       </li>
     </ul>
   </div>

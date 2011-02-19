@@ -1,27 +1,27 @@
 <% form_for [:admin, @news_entry], :html => { :multipart => true } do |form| %>
   <p class='title'>
-    <%= form.label :headline, t('news_form_label_headline') %>
+    <%= form.label :headline %>
     <%= form.text_field :headline, :class => 'textbox', :maxlength => 255 %>
   </p>
   <p class='label'>
-    <%= form.label :ante_headline, t('news_form_label_ante_headline')  %>
+    <%= form.label :ante_headline %>
     <%= form.text_field :ante_headline, :class => 'textbox', :style => "width: 100%" %>
   </p>
   <p class='label'>
-    <%= form.label :leadtext, t('news_form_label_lead') %>
+    <%= form.label :leadtext %>
     <%= form.text_area :leadtext, :cols => 100, :rows => 5, :class => 'textarea', :style => "width: 100%" %>
   </p>
   <p class='label'>
-    <%= form.label :text, t('news_form_label_text') %>
+    <%= form.label :text %>
     <%= form.text_area :text, :cols => 100, :rows => 15, :class => 'textarea', :style => "width: 100%" %>
   </p>
   <p class='label'>
-    <%= form.label t('news_form_label_tags') %>
+    <%= form.label t('activerecord.attributes.news_entry.tags') %>
     <%= form.text_field "news_tags", :class => 'textbox', :maxlength => 255, :style => "width: 100%" %>
   </p>
   <p class='label'>
   <% if @news_categories -%>
-  <%= form.label t('news_form_label_categories') %>
+  <%= form.label t('activerecord.attributes.news_entry.categories') %>
   <% for category in @news_categories %>
     <%= check_box_tag "news_entry[news_category_ids][]", category.id, @news_entry.news_categories.include?(category) %>
     <%= category.name %>
@@ -29,36 +29,40 @@
   <% end -%>
   </p>
   <p class='label'>
-    <%= form.label :start, t('news_form_label_start') %>
+    <%= form.label :start %>
     <%= form.text_field :start, :class=> "date" %>
   </p>
   <p class='label'>
-    <%= form.label :stop, t('news_form_label_stop') %>
+    <%= form.label :stop %>
     <%= form.text_field :stop, :class=> "date" %>
   </p>
   <p class='label'>
-    <%= form.label :photo_text_caption, t('news_form_photo_text_caption') %>
+    <%= form.label :photo_text_caption %>
     <%= form.text_field :photo_text_caption, :class => 'textbox', :style => "width: 100%" %>
   </p>
   <p class='label'>
-    <%= form.label :photo_text, t('news_form_label_photo_text') %>
+    <%= form.label :photo_text %>
     <%= form.file_field :photo_text %>
     <br />
     <%= image_tag @news_entry.photo_text.url if @news_entry.photo_text.file? %>
   </p>
   <p class='label'>
-    <%= form.label :photo_lead, t('news_form_label_photo_lead_text') %>
+    <%= form.label :photo_lead %>
     <%= form.file_field :photo_lead %>
     <br />
     <%= image_tag @news_entry.photo_lead.url if @news_entry.photo_lead.file? %>
   </p>
   <p class='label'>
-    <%= form.label :news_video_id, t('news_form_label_news_video') %>
-    <%= form.select :news_video_id, @news_videos.collect {|p| [ p.title, p.id ] }, { :include_blank => true }  %>
+    <%= form.label :news_document_id %>
+    <%= form.select :news_document_id, @documents.collect {|p| [ p.name, p.id ] }, { :include_blank => true }  %>
   </p>
   <p class='label'>
-    <%= form.label :gallery_id, t('news_form_label_gallery') %>
-    <%= form.select :gallery_id, @galleries.collect {|p| [ p.name, p.id ] }, { :include_blank => true }  %>
+    <%= form.label :news_video_id %>
+    <%= form.select :news_video_id, @videos.collect {|p| [ p.name, p.id ] }, { :include_blank => true }  %>
+  </p>
+  <p class='label'>
+    <%= form.label :news_gallery_image_id %>
+    <%= form.select :news_gallery_image_id, @galleries.collect {|p| [ p.name, p.id ] }, { :include_blank => true }  %>
   </p>
 
   <p class="buttons">

@@ -1,0 +1,21 @@
+<h1><%= t('news_document_folder_remove_title') %></h1>
+
+<p><%= t('news_document_folder_remove_message') %></p>
+
+<table class="index" cellpadding="0" cellspacing="0" border="0">
+  <tbody>
+    <tr class="node level-1">
+      <td class="news">
+        <%= @news_document_folder.name %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<% form_for [:admin, @news_document_folder], :html => { :method => 'delete' } do %>
+  <p class="buttons">
+    <input class="button" type="submit" value="<%= t('news_document_folder_button_remove') %>"/>
+    <%= t('or') %>
+    <%= link_to t('news_button_cancel'), admin_news_document_folder_url %>
+  </p>
+<%- end -%>

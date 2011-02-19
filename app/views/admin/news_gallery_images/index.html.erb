@@ -3,33 +3,33 @@
     <thead>
       <tr>
         <th class="layout"></th>
-        <th class="layout"><%= t('news_gallery_item_list_description') %></th>
-        <th class="layout"><%= t('news_gallery_item_list_gallery') %></th>
+        <th class="layout"><%= t('news.galleries.items.list.description') %></th>
+        <th class="layout"><%= t('news.galleries.items.list.gallery') %></th>
         <th class="modify" colspan="2"><%= t('modify') %></th>
       </tr>
     </thead>
     <tbody>
-    <% if @gallery_items.any? -%>
-      <% @gallery_items.each do |item| -%>
+    <% if @news_gallery_images.any? -%>
+      <% @news_gallery_images.each do |item| -%>
       <tr class="node level_1">
         <td class="layout">
           <%= image_tag item.photo.url(:small) %>
         </td>
         <td class="layout">
-          <%= link_to item.description, edit_admin_gallery_item_url(item) %>
+          <%= link_to item.description, edit_admin_news_gallery_image_url(item) %>
         </td>
         <td class="layout">
-          <%= item.gallery.name %>
+          <%= item.news_folder.name %>
         </td>
         <td class="remove">          
-          <%= link_to t('remove'), remove_admin_gallery_item_url(item), :class => "action"  %>
+          <%= link_to t('remove'), remove_admin_news_gallery_image_url(item), :class => "action"  %>
         </td>
       </tr>
       <% end -%>
     <% else -%>
       <tr class="node level_1">
         <td colspan="4">
-          <%= t('news_gallery_item_list_empty') %>
+          <%= t('news.galleries.items.list.empty') %>
         </td>
         <td class="remove"></td>
       </tr>
@@ -38,13 +38,13 @@
   </table>
   
   <div id="pagination" style='margin: 10px'>
-    <%= will_paginate @gallery_items %>
+    <%= will_paginate @news_gallery_images %>
   </div>
 
   <div id="actions">
     <ul>
       <li>
-        <%= link_to image('plus') + " " + t('news_gallery_add'), new_admin_gallery_item_url %>
+        <%= link_to image('plus') + " " + t('news.galleries.items.buttons.add'), new_admin_news_gallery_image_url %>
       </li>
     </ul>
   </div>

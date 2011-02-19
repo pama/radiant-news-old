@@ -1,0 +1,36 @@
+<% form_for [:admin, @news_gallery_image], :html => { :multipart => true } do |form| %>
+  <p class='label'>
+    <%= form.label :title %>
+    <%= form.text_field :title, :class => 'textbox', :maxlength => 255, :style => "width: 100%" %>
+  </p>
+  <p class='label'>
+    <%= form.label :description %>
+    <%= form.text_field :description, :class => 'textbox', :maxlength => 255, :style => "width: 100%" %>
+  </p>    
+  <p class='label'>
+    <%= form.label :photo %>
+    <%= form.file_field :photo %>
+  </p>  
+  <p>
+    <%= image_tag @news_gallery_image.photo.url(:medium) if @news_gallery_image.photo.file? %>
+  </p>
+
+  <p class='label'>
+    <%= form.label :small_title %>
+    <%= form.text_field :small_title, :class => 'textbox', :maxlength => 255, :style => "width: 100%" %>
+  </p>
+  <p class='label'>
+    <%= form.label :small_description %>
+    <%= form.text_field :small_description, :class => 'textbox', :maxlength => 255, :style => "width: 100%" %>
+  </p>
+  <p class='label'>
+    <%= form.label :news_folder_id %>
+    <%= form.select :news_folder_id, @galleries.collect { |p| [p.name, p.id] } %>
+  </p>
+  <p class="buttons">
+    <%= save_model_button @news_gallery_image %>
+    <%= save_model_and_continue_editing_button @news_gallery_image %>
+    <%= t('or') %>
+    <%= link_to t('cancel'), admin_news_gallery_images_url %>
+  </p>
+<% end %>

@@ -249,6 +249,19 @@ module NewsTags
     tag.locals.news.news_video.description
   end
 
+  #
+  # Gallery
+  #
+
+  desc %{
+    If gallery exists
+  }
+  tag 'news:if_gallery' do |tag|
+    if tag.locals.news.gallery != nil
+      tag.expand
+    end
+  end
+
   def currentnews(parameter)
     curr_date = Time.now
     str_conditions = 'start <=  ? and (stop is null or stop >= ?)'

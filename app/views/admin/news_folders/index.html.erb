@@ -1,0 +1,47 @@
+<div class="outset">
+  <table class="index" id="site_map" summary="list of book authors">
+    <thead>
+      <tr>
+        <th class="layout"><%= t('news_folder_list_name') %></th>
+        <th class="layout"><%= t('news_folder_list_type') %></th>
+        <th class="modify"><%= t('modify') %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% if @news_folders.any? -%>
+      <% @news_folders.each do |item| -%>
+      <tr class="node level_1">
+        <td class="layout">
+          <%= link_to item.name, edit_admin_news_folder_url(item) %>
+        </td>
+        <td class="layout">
+          <%= link_to item.type_name %>
+        </td>
+        <td class="remove">
+          <%= link_to t('remove'), remove_admin_news_folder_url(item), :class => "action"  %>
+        </td>
+      </tr>
+      <% end -%>
+    <% else -%>
+      <tr class="node level_1">
+        <td colspan="2">
+          <%= t('news_folder_list_empty') %>
+        </td>
+        <td class="remove"></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  
+  <div id="pagination" style='margin: 10px'>
+    <%= will_paginate @news_folders %>
+  </div>
+
+  <div id="actions">
+    <ul>
+      <li>
+        <%= link_to image('plus') + " " + t('news_folder_add'), new_admin_news_folder_url %>
+      </li>
+    </ul>
+  </div>
+</div>

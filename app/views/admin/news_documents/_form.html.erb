@@ -1,0 +1,30 @@
+<% form_for [:admin, @news_document], :html => { :multipart => true } do |form|%>  
+  <p class='title'>
+    <%= form.label :title %>
+    <%= form.text_field :title, :class => 'textbox', :maxlength => 255, :style => "width: 100%" %>
+  </p>  
+  <p class='lable'>
+    <%= form.label :authors %>
+    <%= form.text_field :authors, :class => 'textbox', :maxlength => 255, :style => "width: 100%" %>
+  </p>
+  <p class='label'>
+    <%= form.label :description %>
+    <%= form.text_area :description, :class => 'texarea', :cols => 100, :rows => 30, :style => "width: 100%" %>
+  </p>
+  <p class='label'>
+    <%= form.label :date %>
+    <%= form.text_field :date, :class=> "date" %>
+  </p>
+  <p class='label'>
+    <%= form.label :document %>
+    <%= form.file_field :document %>
+  </p>  
+  
+  <br />
+  <p class="buttons">
+    <%= save_model_button(@news_document) %>
+    <%= save_model_and_continue_editing_button(@news_document) %>
+    <%= t('or') %>
+    <%= link_to t('news_button_cancel'), {:action => :index} %>
+  </p>
+<% end %>

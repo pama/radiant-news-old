@@ -1,41 +1,111 @@
 ---
 pt:
-  # Menu
-  news_header: "Notícias"
-  news_entries: "Notícias"
-  news_categories: "Categorias"
-  news_tags: "Marcadores"
-  news_galleries: "Galerias"
-  news_gallery_images: "Imagens de Galerias"
-  news_videos: "Vídeos"
-    
-  # news
-  news_add: "Adicionar nova notícia"
-  news_button_remove: "Remover notícia"
-  news_form_label_ante_headline: "Antetítulo"
-  news_form_label_categories: "Categorias"
-  news_form_label_headline: "Título"
-  news_form_label_lead: "Resumo ('Lead')"
-  news_form_label_news_video: "Vídeo"
-  news_form_label_gallery: "Galeria"
-  news_form_label_photo_lead_text: 'Imagem do resumo'
-  news_form_label_photo_text: "Imagem do texto"
-  news_form_label_start: "Início"
-  news_form_label_stop: "Fim"
-  news_form_label_tags: "Tags (saparadas por vírgula)"
-  news_form_label_text: "Texto"
-  news_form_photo_text_caption: 'Legenda da imagem do texto'
-  news_index_title: "Notícias"
-  news_list_empty: "Não existem notícias registadas."
-  news_list_name: "Nome"
-  news_list_start: "Início"
-  news_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta notícia?'
-  news_remove_title: "Remover notícia"
-  news_search_category_select: "Todas as categories"
-  news_search_label_category: "Categoria"
-  news_search_label_headline: "Título"
-  news_title_edit: "Editar"
-  news_title_new: "Nova notícia"
+  news_document: 'Documento'
+  news_gallery_image: 'Imagem'
+  news_folder: 'Pasta'
+  news_video: 'Vídeo'
+  
+  activerecord:
+    models:
+      gallery_items: 'Imagens'
+      news_document_authors: 'Autores dos documentos'
+      news_folders: 'Pasta'
+    attributes:
+      gallery_item:
+        description: 'Descrição'
+        news_folder_id: 'Nome da galeria'
+        photo: 'Imagem'
+        small_title: 'Título da imagem pequena'
+        small_description: 'Descrição da imagem pequena'
+        title: 'Título'
+      news_document:
+        authors: 'Autores'
+        description: 'Descrição'
+        date: 'Data'
+        document: 'Ficheiro'
+        title: 'Título'
+      news_entry:
+        ante_headline: "Antetítulo"
+        categories: "Categorias"
+        headline: "Título"
+        leadtext: "Resumo ('Lead')"
+        news_document_id: "Documento"
+        news_gallery_image_id: "Galeria"
+        news_video_id: "Vídeo"
+        gallery: "Galeria"
+        photo_lead: 'Imagem do resumo'
+        photo_text: "Imagem do texto"
+        photo_text_caption: 'Legenda da imagem do texto'
+        start: "Início"
+        stop: "Fim"
+        tags: "Marcadores (saparadas por vírgula)"
+        text: "Texto"
+      news_gallery_image:
+        description: 'Descrição'
+        news_folder_id: 'Galeria'
+        photo: 'Imagem'
+        small_title: 'Título da imagem pequena'
+        small_description: 'Descrição da imagem pequena'
+        title: 'Título'
+        
+  news:
+    menu:
+      categories: "Categorias"
+      documents: "Documentos"
+      entries: "Notícias"
+      folders: "Pastas"
+      gallery: "Imagens"
+      header: "Notícias"
+      tags: "Marcadores"
+      videos: "Vídeos"
+    documents:      
+      buttons:
+        add: 'Adicionar Documento'
+        remove: 'Remover Documento'
+      list:        
+        title: 'Título'
+        empty: 'Não existem documentos registados'
+      messages:
+        remove: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> este documento?'
+      title:
+        edit: 'Editar Documento'
+        new: 'Novo Documento'
+        remove: 'Remover Documento'
+    galleries:
+      items:
+        buttons:
+          add: 'Adicionar Imagem'
+          remove: 'Remover Imagem'       
+        list:
+          description: 'Descrição'
+          gallery: 'Galeria'
+          empty: 'Não existem imagens registadas'
+        messages:
+          remove: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta imagem?'
+        title:
+          edit: 'Editar Imagens'
+          new: 'Nova Imagem'
+          remove: 'Remover Imagem'
+    news_entry:
+      buttons:
+        add: "Adicionar Notícia"
+        filter: "Filtrar"
+        remove: "Remover Notícia"
+      list:
+        empty: "Não existem notícias registadas."
+        name: "Nome"
+        start: "Início"
+      messages:
+          remove: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta notícia?'
+      search:
+        category: "Categoria"
+        category_select: "Todas as categories"
+        headline: "Título"
+      title:
+          edit: 'Editar Notícia'
+          new: 'Nova Notícia'
+          remove: 'Remover Notícia'
+    news_gallery_image:
 
   # categories
   news_categories_index_title: "Categorias"
@@ -50,28 +120,18 @@ pt:
   news_category_button_remove: "Remover categoria"
   
   # Gallery
-  news_gallery_add: "Adicionar galeria"
-  news_gallery_button_remove: "Remover galeria"
-  news_gallery_remove_title: "Remover galeria"
-  news_gallery_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta galeria?'
-  news_gallery_list_empty: 'Não existem galerias registadas'
-  news_gallery_list_name: "Nome"
-  news_gallery_form_label_name: "Nome"
-  news_gallery_title_edit: "Editar"
-  news_gallery_title_new: "Nova galeria"
+  news_folder_add: "Adicionar pasta"
+  news_folder_button_remove: "Remover pasta"
+  news_folder_remove_title: "Remover pasta"
+  news_folder_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta pasta?'
+  news_folder_list_empty: 'Não existem pastas registadas'
+  news_folder_list_type: "Tipo"
+  news_folder_list_name: "Nome"  
+  news_folder_form_label_name: "Nome"
+  news_folder_form_label_type_id: "Tipo"
+  news_folder_title_edit: "Editar"
+  news_folder_title_new: "Nova pasta"
   
-  # Gallery items
-  news_gallery_add: "Adicionar imagem"
-  news_gallery_item_button_remove: "Remover imagem"
-  news_gallery_item_form_label_description: "Título"
-  news_gallery_item_form_label_gallery: "Galeria"
-  news_gallery_item_form_label_photo: "Imagem"
-  news_gallery_item_list_description: "Título"
-  news_gallery_item_list_empty: 'Não existem imagens registadas'
-  news_gallery_item_list_gallery: "Galeria"
-  news_gallery_item_remove_title: 'Remover imagem'
-  news_gallery_item_remove_message: 'Tem a certeza que pretende <strong class="warning">remover permanentemente</strong> esta imagem?'
-  news_gallery_item_title_new: "Adicionar imagem à galeria"
 
   # tags
   news_tags_index_title: "Marcadores"
@@ -98,6 +158,17 @@ pt:
   news_video_form_label_video_url: "Endereço do vídeo"
   news_video_title_edit: "Editar"
   news_video_title_new: "Novo vídeo"
+
+  news_document_folder_index_title: "Documentos"
+  news_document_folder_list_empty: "Não existem documentos registados."
+  news_document_folder_list_name: "Nome"
+  news_document_folder_add: "Adicionar novo documento"
+  news_document_folder_title_new: "Novo documento"
+  news_document_folder_title_edit: "Editar"
+  news_document_folder_form_label_name: "Nome"  
+  news_document_folder_remove_title: "Remover documento"
+  news_document_folder_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> este documento?'
+  news_document_folder_button_remove: "Remover documento"
 
   # buttons
   news_button_cancel: "Cancelar"    

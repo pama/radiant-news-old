@@ -8,7 +8,10 @@ class Admin::NewsEntriesController <  Admin::ResourceController
   end
   
   def create
-    @news_categories = NewsCategory.find(:all, :order => "name ASC")        
+    @news_categories = NewsCategory.find(:all, :order => "name ASC")
+    @videos = NewsFolder.find(:all, :order => "name ASC", :conditions => "type_id=3")
+    @galleries = NewsFolder.find(:all, :order => "name ASC", :conditions => "type_id=2")
+    @documents = NewsFolder.find(:all, :order => "name ASC", :conditions => "type_id=1")     
     params[:news_entry][:news_tags] = tags_to_arr(params[:news_entry][:news_tags])
     super
   end
@@ -21,14 +24,16 @@ class Admin::NewsEntriesController <  Admin::ResourceController
   
   def new
     @news_categories = NewsCategory.find(:all, :order => "name ASC")
-    @news_videos = NewsVideo.find(:all, :order => "title ASC")
-    @galleries = Gallery.find(:all, :order => "name ASC")
+    @videos = NewsFolder.find(:all, :order => "name ASC", :conditions => "type_id=3")
+    @galleries = NewsFolder.find(:all, :order => "name ASC", :conditions => "type_id=2")
+    @documents = NewsFolder.find(:all, :order => "name ASC", :conditions => "type_id=1")
   end
   
   def edit
     @news_categories = NewsCategory.find(:all, :order => "name ASC")
-    @news_videos = NewsVideo.find(:all, :order => "title ASC")
-    @galleries = Gallery.find(:all, :order => "name ASC")
+    @videos = NewsFolder.find(:all, :order => "name ASC", :conditions => "type_id=3")
+    @galleries = NewsFolder.find(:all, :order => "name ASC", :conditions => "type_id=2")
+    @documents = NewsFolder.find(:all, :order => "name ASC", :conditions => "type_id=1")
   end
   
   def index

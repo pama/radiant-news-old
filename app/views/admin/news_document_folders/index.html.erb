@@ -2,26 +2,26 @@
   <table class="index" id="site_map" summary="list of book authors">
     <thead>
       <tr>
-        <th class="layout"><%= t('news_gallery_list_name') %></th>
+        <th class="layout"><%= t('news_document_folder_list_name') %></th>
         <th class="modify"><%= t('modify') %></th>
       </tr>
     </thead>
     <tbody>
-    <% if @galleries.any? -%>
-      <% @galleries.each do |item| -%>
+    <% if @news_document_folders.any? -%>
+      <% @news_document_folders.each do |item| -%>
       <tr class="node level_1">
         <td class="layout">
-          <%= link_to item.name, edit_admin_gallery_url(item) %>
+          <%= link_to item.name, edit_admin_news_document_folder_url(item) %>
         </td>
         <td class="remove">          
-          <%= link_to t('remove'), remove_admin_gallery_url(item), :class => "action"  %>
+          <%= link_to t('remove'), remove_admin_news_document_folder_url(item), :class => "action"  %>
         </td>
       </tr>
       <% end -%>
     <% else -%>
       <tr class="node level_1">
         <td>
-          <%= t('news_gallery_list_empty') %>
+          <%= t('news_document_folder_list_empty') %>
         </td>
         <td class="remove"></td>
       </tr>
@@ -30,13 +30,13 @@
   </table>
   
   <div id="pagination" style='margin: 10px'>
-    <%= will_paginate @galleries %>
+    <%= will_paginate @news_document_folders %>
   </div>
 
   <div id="actions">
     <ul>
       <li>
-        <%= link_to image('plus') + " " + t('news_gallery_add'), new_admin_gallery_url %>
+        <%= link_to image('plus') + " " + t('news_document_folder_add'), new_admin_news_document_folder_url %>
       </li>
     </ul>
   </div>

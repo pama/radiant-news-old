@@ -1,0 +1,18 @@
+<% form_for [:admin, @news_folder] do |form| %>
+  <div class="form_area">
+    <p class='label'>
+      <%= form.label :name, t('news_folder_form_label_name') %>
+      <%= form.text_field :name, :class => 'textbox', :maxlength => 255, :style => "width: 100%" %>
+    </p>
+    <p class='select'>
+      <%= form.label :type_id, t('news_folder_form_label_type_id') %>
+      <%= form.select :type_id, @options.collect {|p| [ p.first, p.second ] } %>
+    </p>
+    <p class="buttons">
+      <%= save_model_button @news_folder %>
+      <%= save_model_and_continue_editing_button @news_folder %>
+      <%= t('or') %>
+      <%= link_to t('cancel'), admin_news_folders_url %>
+    </p>
+  </div>
+<% end %>

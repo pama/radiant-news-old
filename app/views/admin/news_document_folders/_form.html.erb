@@ -1,0 +1,14 @@
+<% form_for([:admin, @news_document_folder]) do |form| %>
+  <div class="form_area">
+    <p class='lable'>
+      <%= form.label :name, t('news_document_folder_form_label_name') %>
+      <%= form.text_field :name, :class => 'textbox', :maxlength => 255, :style => "width: 100%" %>
+    </p>
+    <p class="buttons">
+      <%= save_model_button @news_document_folder %>
+      <%= save_model_and_continue_editing_button @news_document_folder %>
+      <%= t('or') %>
+      <%= link_to t('cancel'), admin_news_document_folders_url %>
+    </p>
+  </div>
+<% end %>

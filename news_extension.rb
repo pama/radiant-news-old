@@ -8,13 +8,14 @@ class NewsExtension < Radiant::Extension
   
   def activate
     admin.nav << Radiant::AdminUI::NavTab.new("News")
-    tab I18n.t('news_header') do # 'News' do
-      add_item I18n.t('news_entries'), "/admin/news/news_entries"
-      add_item I18n.t('news_categories'), "/admin/news/news_categories"
-      add_item I18n.t("news_tags"), "/admin/news/news_tags"
-      add_item I18n.t("news_galleries"), "/admin/news/galleries"
-      add_item I18n.t("news_gallery_images"), "/admin/news/gallery_items"
-      add_item I18n.t("news_videos"), "/admin/news/news_videos"
+    tab I18n.t('news.menu.header') do # 'News' do
+      add_item I18n.t('news.menu.entries'), "/admin/news/news_entries"
+      add_item I18n.t('news.menu.categories'), "/admin/news/news_categories"
+      add_item I18n.t("news.menu.tags"), "/admin/news/news_tags"
+      add_item I18n.t("news.menu.folders"), "/admin/news/news_folders"      
+      add_item I18n.t("news.menu.gallery"), "/admin/news/news_gallery_images"            
+      add_item I18n.t("news.menu.documents"), "/admin/news/news_documents"            
+      add_item I18n.t("news.menu.videos"), "/admin/news/news_videos"      
     end
 
     Page.send :include, NewsTags
