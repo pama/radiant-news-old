@@ -18,7 +18,11 @@
   <p class='label'>
     <%= form.label :document %>
     <%= form.file_field :document %>
-  </p>  
+  </p>
+  <p class='label'>
+    <%= form.label :news_folder_id %>
+    <%= form.select :news_folder_id, @documents.collect { |p| [p.name, p.id] } %>
+  </p> 
   
   <br />
   <p class="buttons">

@@ -211,44 +211,117 @@ module NewsTags
   #
   # video
   #
-
   desc %{
     If video exists
   }
   tag 'news:if_video' do |tag|
-    if tag.locals.news.news_video != nil
+    if tag.locals.news.news_video_id != nil
       tag.expand
     end
   end
-
+  
+  desc %{
+    Iterates all videos from a video gallery
+  }
+  tag 'news:video_current' do |tag|
+    result = []
+    images = NewsVideo.find(:all, :conditions => ["news_folder_id = ?", tag.locals.news.news_video_id  ])
+    images.each do |x|
+      tag.locals.video_item = x
+      result << tag.expand
+    end
+    result
+  end
+  
   desc %{
     Get video url
   }
-  tag 'news:video_url' do |tag|
-    tag.locals.news.news_video.video_url
+  tag 'news:video_item_url' do |tag|
+    tag.locals.video_item.video_url
   end
 
   desc %{
     Get video title
   }
-  tag 'news:video_title' do |tag|
-    tag.locals.news.news_video.title
+  tag 'news:video_item_title' do |tag|
+    tag.locals.video_item.title
   end
 
   desc %{
     Get video ante title
   }
-  tag 'news:video_ante_title' do |tag|
-    tag.locals.news.news_video.ante_title
+  tag 'news:video_item_ante_title' do |tag|
+    tag.locals.video_item.ante_title
   end
   
   desc %{
     Get video description
   }
-  tag 'news:video_description' do |tag|
-    tag.locals.news.news_video.description
+  tag 'news:video_item_description' do |tag|
+    tag.locals.video_item.description
   end
 
+  #
+  # Documents
+  #
+
+  desc %{
+    If document exists
+  }
+  tag 'news:if_document' do |tag|
+    if tag.locals.news.news_document_id != nil
+      tag.expand
+    end
+  end
+  
+  desc %{
+    Iterates all images from a gallery
+  }
+  tag 'news:document_current' do |tag|
+    result = []
+    images = NewsDocument.find(:all, :conditions => ["news_folder_id = ?", tag.locals.news.news_document_id  ])
+    images.each do |x|
+      tag.locals.document = x
+      result << tag.expand
+    end
+    result
+  end
+  
+  desc %{
+    Get document item title
+  }
+  tag 'news:document_item_title' do |tag|
+    tag.locals.document.title
+  end
+  
+  desc %{
+    Get document item date
+  }
+  tag 'news:document_item_date' do |tag|
+    tag.locals.document.date
+  end
+  
+  desc %{
+    Get document item description
+  }
+  tag 'news:document_item_description' do |tag|
+    tag.locals.document.description
+  end
+  
+  desc %{
+    Get document item authors
+  }
+  tag 'news:document_item_authors' do |tag|
+    tag.locals.document.authors
+  end
+  
+  desc %{
+    Get document item file
+  }
+  tag 'news:document_item_url' do |tag|
+    tag.locals.document.document.url
+  end
+  
   #
   # Gallery
   #
@@ -257,11 +330,67 @@ module NewsTags
     If gallery exists
   }
   tag 'news:if_gallery' do |tag|
-    if tag.locals.news.gallery != nil
+    if tag.locals.news.news_gallery_image_id != nil
       tag.expand
     end
   end
+  
+  desc %{
+    Iterates all images from a gallery
+  }
+  tag 'news:gallery_current' do |tag|
+    result = []
+    images = NewsGalleryImage.find(:all, :conditions => ["news_folder_id = ?", tag.locals.news.news_gallery_image_id  ])
+    images.each do |x|
+      tag.locals.gallery_item = x
+      result << tag.expand
+    end
+    result
+  end
+  
+  desc %{
+    Get gallery item title
+  }
+  tag 'news:gallery_item_title' do |tag|
+    tag.locals.gallery_item.title
+  end
+  
+  desc %{
+    Get gallery item description
+  }
+  tag 'news:gallery_item_description' do |tag|
+    tag.locals.gallery_item.description
+  end
 
+  desc %{
+    Get gallery item small title
+  }
+  tag 'news:gallery_item_small_title' do |tag|
+    tag.locals.gallery_item.small_title
+  end
+  
+  desc %{
+    Get gallery item small description
+  }
+  tag 'news:gallery_item_small_description' do |tag|
+    tag.locals.gallery_item.small_description
+  end
+  
+  desc %{
+    Get gallery item url
+  }
+  tag 'news:gallery_item_photo_url' do |tag|
+    tag.locals.gallery_item.photo.url(:medium)
+  end
+  
+  desc %{
+    Get gallery item small url
+  }
+  tag 'news:gallery_item_small_photo_url' do |tag|
+    tag.locals.gallery_item.photo.url(:small)
+  end
+
+  ##################################################################################################
   def currentnews(parameter)
     curr_date = Time.now
     str_conditions = 'start <=  ? and (stop is null or stop >= ?)'
@@ -285,7 +414,7 @@ module NewsTags
       end
     end
 
-    arr_table_join += ['news_video']
+    #arr_table_join += ['news_video']
     
     find_parameters = {:conditions => [str_conditions] + arr_parameter, :order => 'start DESC, news_entries.id DESC'}    
     find_parameters.merge!({:include => arr_table_join}) if arr_table_join

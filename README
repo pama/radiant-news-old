@@ -1,31 +1,32 @@
-= News
+= The project
 
 Original Created by Pascal Naef (ScreenConcept), December 2008
 This version by Ahmy Yulrizka (ahmy), September 2009
+This version by Paulo Abreu (pama)
 
-With this news extension you can enter news with headline, leadtext and text in backend. A news will be only displayed if start is greater or equal current date and stop is less or equal current date.
+This project is a fork from Ahmy Yulrizka version.
 
-Requirements
-For this extension you need a couple of plugin
-* calendar data select plugin is required. Further informations are you find here: http://code.google.com/p/calendardateselect/ .
-* will paginate. Further information and installation you can see here http://wiki.github.com/mislav/will_paginate/installation
 
-for will_paginate, the easiest way is just using the gem and add 'require "will_paginate"' on “config/environment.rb” as the above site show. 
+= Requirements
 
-== ENHANCEMENT
-* News can be grouped by category
-* News can be tagged
-* News can be filtered by category or tag also by id
-* Limit the news that show up
-* Added Date tag
-* 2 Page mechanism, (Front Page and Entry Page). Entry page display specific news
+Randiant CMS 0.9.x
+
+
+== Features
+
+(TODO)
+* News
+* News may also have:
+  * a Gallery with several images
+  * a Document list
+  * a Video list from youtube
 
 
 == INSTALLATION
 
 1)Install the News Extension
 
-git clone git://github.com/screenconcept/radiant-news-extension.git vendor/extensions/news
+git clone git://github.com:pama/radiant-news-extension.git
 
 2) run migration and update
 
@@ -75,7 +76,3 @@ you can also limit the front page to specific category or tag and also limit the
 </r:news:entry><br>
 
 this will show the full news, without the lead text.
-
-
-== TODO
-
