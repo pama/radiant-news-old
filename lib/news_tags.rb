@@ -150,10 +150,16 @@ module NewsTags
   desc %{
     Returns text image url of current news
   }
-  tag 'news:lead_image' do |tag|
-    tag.locals.news.photo_lead.url
+  tag 'news:lead_highlight_image_url' do |tag|
+    tag.locals.news.photo_lead.url(:highlight)
   end
-
+  
+  desc %{
+    Returns text image url of current news
+  }
+  tag 'news:lead_latest_image_url' do |tag|
+    tag.locals.news.photo_lead.url(:latest)
+  end
   
   desc %{
     Returns link to current news

@@ -44,13 +44,13 @@
     <%= form.label :photo_text %>
     <%= form.file_field :photo_text %>
     <br />
-    <%= image_tag @news_entry.photo_text.url if @news_entry.photo_text.file? %>
+    <%= image_tag @news_entry.photo_text.url(:medium) if @news_entry.photo_text.file? %>
   </p>
   <p class='label'>
     <%= form.label :photo_lead %>
     <%= form.file_field :photo_lead %>
     <br />
-    <%= image_tag @news_entry.photo_lead.url if @news_entry.photo_lead.file? %>
+    <%= image_tag @news_entry.photo_lead.url(:latest) if @news_entry.photo_lead.file? %>
   </p>
   <p class='label'>
     <%= form.label :news_document_id %>
