@@ -128,7 +128,7 @@ module NewsTags
     Returns text image url of current news
   }
   tag 'news:text_image' do |tag|
-    tag.locals.news.photo_text
+    tag.locals.news.photo_text(:medium)
   end
 
   desc %{
@@ -136,7 +136,7 @@ module NewsTags
   }
   tag 'news:text_caption' do |tag|
     tag.locals.news.photo_text_caption
-  end
+  ends
 
   desc %{
     If lead image url exists
