@@ -218,6 +218,19 @@ module NewsTags
   # video
   #
   desc %{
+    get the video for the main page, if available
+  }
+  tag 'news:video_main_current' do |tag|
+    result = []
+    video = NewsVideo.find(:first, :conditions => ["show_in_main_page = ?", true])
+    if video != nil    
+      tag.locals.video_item = video     
+      result << tag.expand 
+    end   
+    result
+  end
+  
+  desc %{
     If video exists
   }
   tag 'news:if_video' do |tag|
