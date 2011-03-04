@@ -391,6 +391,30 @@ module NewsTags
   end
   
   desc %{
+    Iterates all images from a gallery and returns the html for jquery tools gallery
+  }
+  tag 'news:gallery_current_html' do |tag|
+    to_return = ''    
+    images = NewsGalleryImage.find(:all, :conditions => ["news_folder_id = ?", tag.locals.news.news_gallery_image_id  ])
+        
+    x = 0;
+    images.each do |image|
+      to_return += "<div>" if x == 0
+      to_return += '<img src="' + image.photo.url(:small) + '" title="' + image.title + '" />'
+      x = x + 1
+      
+      if x == 3
+        to_return += "</div>"
+        x = 0
+      end
+    end
+    
+    to_return += "</div>" if x != 0
+    
+    to_return
+  end 
+  
+  desc %{
     Get gallery item title
   }
   tag 'news:gallery_item_title' do |tag|
