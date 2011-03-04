@@ -244,12 +244,35 @@ module NewsTags
   }
   tag 'news:video_current' do |tag|
     result = []
-    images = NewsVideo.find(:all, :conditions => ["news_folder_id = ?", tag.locals.news.news_video_id  ])
-    images.each do |x|
+    news_videos = NewsVideo.find(:all, :conditions => ["news_folder_id = ?", tag.locals.news.news_video_id ])                                                                        
+    
+    news_videos.each do |x|
       tag.locals.video_item = x
       result << tag.expand
     end
+    
+    tag.locals.z = "olá"
     result
+  end
+  
+  # improve this code!
+  desc %{
+    Get video pagination
+  }
+  tag 'news:video_item_pagination' do |tag|
+    result = []
+    entry_id = @request.parameters[:entry_id]
+    news  =  NewsEntry.find(entry_id)
+    z = NewsVideo.find(:all, :conditions => ["news_folder_id = ?", news.news_video_id ])    
+    count = z.count
+    
+    to_return = ''
+    x = 0    
+    count.times do |x|
+      to_return += ('<li><a id="t' + String(x) + '" href="#video-' + String(x) + '">' + String(x) + '</a></li>')       
+    end
+    
+    to_return        
   end
   
   desc %{
@@ -257,13 +280,13 @@ module NewsTags
   }
   tag 'news:video_item_url' do |tag|
     tag.locals.video_item.video_url
-  end
-
+  end  
+  
   desc %{
     Get video title
   }
   tag 'news:video_item_title' do |tag|
-    tag.locals.video_item.title
+    tag.locals.video_item_title
   end
 
   desc %{
