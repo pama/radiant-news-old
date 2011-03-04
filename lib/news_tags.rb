@@ -269,7 +269,7 @@ module NewsTags
     to_return = ''
     x = 0    
     count.times do |x|
-      to_return += ('<li><a id="t' + String(x) + '" href="#video-' + String(x) + '">' + String(x) + '</a></li>')       
+      to_return += ('<li><a id="t' + String(x + 1) + '" href="#video-' + String(x + 1) + '">' + String(x + 1) + '</a></li>')       
     end
     
     to_return        
@@ -286,7 +286,7 @@ module NewsTags
     Get video title
   }
   tag 'news:video_item_title' do |tag|
-    tag.locals.video_item_title
+    tag.locals.video_item.title
   end
 
   desc %{
