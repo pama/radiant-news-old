@@ -1,99 +1,184 @@
 ---
 en:
-  # Menu
-  news_header: "News"
-  news_entries: "News Entries"
-  news_categories: "News Category"
-  news_tags: "News Tags"
-  news_galleries: "Galleries"
-  news_gallery_images: "Gallery Images"
-  news_videos: "Videos"
-
-  # news
-  news_add: "Add New News"
-  news_button_remove: "Remove News"
-  news_form_label_ante_headline: "Ante-headline"
-  news_form_label_categories: "Categories"
-  news_form_label_headline: "Headline"
-  news_form_label_lead: "Lead Text"
-  news_form_label_gallery: "Gallery"
-  news_form_label_video: 'Video'
-  news_form_label_photo_lead_text: 'Lead text image'
-  news_form_label_photo_text: "Text image"
-  news_form_label_start: "Start"
-  news_form_label_stop: "End"
-  news_form_label_tags: "Tags (separated by comma)"
-  news_form_label_text: "Text"
-  news_form_photo_text_caption: 'Text image caption'
-  news_index_title: "News"
-  news_list_empty: "No news in database"
-  news_list_name: "Name"
-  news_list_start: "Start"
-  news_remove_message: 'Are you sure you want to <strong class="warning">permanently remove</strong> the following news?'
-  news_remove_title: "Remove News"
-  news_search_category_select: "All Categories"
-  news_search_label_category: "Category"  
-  news_search_label_headline: "Headline"  
-  news_title_edit: "Edit"
-  news_title_new: "New News"
+  news_document: 'Documento'
+  news_gallery_image: 'Imagem'
+  news_folder: 'Pasta'
+  news_video: 'Vídeo'
   
+  activerecord:
+    models:
+      gallery_items: 'Imagens'
+      news_document_authors: 'Autores dos documentos'
+      news_folders: 'Pasta'
+    attributes:
+      gallery_item:
+        description: 'Descrição'
+        news_folder_id: 'Nome da galeria'
+        photo: 'Imagem'
+        small_title: 'Título da imagem pequena'
+        small_description: 'Descrição da imagem pequena'
+        title: 'Título'
+      news_document:
+        authors: 'Autores'
+        description: 'Descrição'
+        date: 'Data'
+        document: 'Ficheiro'
+        title: 'Título'
+      news_entry:
+        ante_headline: "Antetítulo"
+        categories: "Categorias"
+        headline: "Título"
+        leadtext: "Resumo ('Lead')"
+        news_document_id: "Documento"
+        news_gallery_image_id: "Galeria"
+        news_video_id: "Vídeo"
+        gallery: "Galeria"
+        photo_lead: 'Imagem do resumo'
+        photo_text: "Imagem do texto"
+        photo_text_caption: 'Legenda da imagem do texto'
+        start: "Início"
+        stop: "Fim"
+        tags: "Marcadores (saparadas por vírgula)"
+        text: "Texto"
+      news_gallery_image:
+        description: 'Descrição'
+        news_folder_id: 'Galeria'
+        photo: 'Imagem'
+        small_title: 'Título da imagem pequena'
+        small_description: 'Descrição da imagem pequena'
+        title: 'Título'
+        
+  news:
+    menu:
+      categories: "Categorias"
+      documents: "Documentos"
+      entries: "Notícias"
+      folders: "Pastas"
+      gallery: "Imagens"
+      header: "Notícias"
+      tags: "Marcadores"
+      videos: "Vídeos"
+    documents:      
+      buttons:
+        add: 'Adicionar Documento'
+        remove: 'Remover Documento'
+      list:        
+        title: 'Título'
+        empty: 'Não existem documentos registados'
+      messages:
+        remove: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> este documento?'
+      title:
+        edit: 'Editar Documento'
+        new: 'Novo Documento'
+        remove: 'Remover Documento'
+    galleries:
+      items:
+        buttons:
+          add: 'Adicionar Imagem'
+          remove: 'Remover Imagem'       
+        list:
+          description: 'Descrição'
+          gallery: 'Galeria'
+          empty: 'Não existem imagens registadas'
+        messages:
+          remove: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta imagem?'
+        title:
+          edit: 'Editar Imagens'
+          new: 'Nova Imagem'
+          remove: 'Remover Imagem'
+    news_entry:
+      buttons:
+        add: "Adicionar Notícia"
+        filter: "Filtrar"
+        remove: "Remover Notícia"
+      list:
+        empty: "Não existem notícias registadas."
+        name: "Nome"
+        start: "Início"
+      messages:
+          remove: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta notícia?'
+      search:
+        category: "Categoria"
+        category_select: "Todas as categories"
+        headline: "Título"
+      title:
+          edit: 'Editar Notícia'
+          new: 'Nova Notícia'
+          remove: 'Remover Notícia'
+    news_gallery_image:
+
   # categories
-  news_categories_index_title: "Categories"
-  news_categories_list_empty: "No categories in database"
-  news_categories_list_name: "Name"
-  news_categories_add: "Add New Category"  
-  news_category_title_new: "New Category"
-  news_category_title_edit: "Edit"
-  news_category_form_label_name: "Name"  
-  news_category_remove_title: "Remove Category"
-  news_category_remove_message: 'Are you sure you want to <strong class="warning">permanently remove</strong> the following category?'
-  news_category_button_remove: "Remove Category"
-
+  news_categories_index_title: "Categorias"
+  news_categories_list_empty: "Não existem categorias registadas."
+  news_categories_list_name: "Nome"
+  news_categories_add: "Adicionar nova categoria"
+  news_category_title_new: "Nova categoria"
+  news_category_title_edit: "Editar"
+  news_category_form_label_name: "Nome"  
+  news_category_remove_title: "Remover categoria"
+  news_category_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta categoria?'
+  news_category_button_remove: "Remover categoria"
+  
   # Gallery
-  news_gallery_add: "Add gallery"
-  news_gallery_button_remove: "Remove gallery"
-  news_gallery_remove_title: "Remove galery"
-  news_gallery_remove_message: 'Are you sure you want to <strong class="warning">permanently remove</strong> the following gallery?'
-  news_gallery_list_empty: 'No galleries in database'
-  news_gallery_list_name: "Name"
-  news_gallery_form_label_name: "Name"
-  news_gallery_title_edit: "Edit"
-  news_gallery_title_new: "New gallery"
+  news_folder_add: "Adicionar pasta"
+  news_folder_button_remove: "Remover pasta"
+  news_folder_remove_title: "Remover pasta"
+  news_folder_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta pasta?'
+  news_folder_list_empty: 'Não existem pastas registadas'
+  news_folder_list_type: "Tipo"
+  news_folder_list_name: "Nome"  
+  news_folder_form_label_name: "Nome"
+  news_folder_form_label_type_id: "Tipo"
+  news_folder_title_edit: "Editar"
+  news_folder_title_new: "Nova pasta"
   
-  # Gallery items
-  news_gallery_add: "Add image"
-  news_gallery_item_button_remove: "Remove image"
-  news_gallery_item_form_label_description: "Title"
-  news_gallery_item_form_label_gallery: "Gallery"
-  news_gallery_item_form_label_photo: "Image"
-  news_gallery_item_list_description: "Title"
-  news_gallery_item_list_empty: 'No images in database'
-  news_gallery_item_list_gallery: "Gallery"
-  news_gallery_item_remove_title: 'Remove image'
-  news_gallery_item_remove_message: 'Are you sure you want to <strong class="warning">permanently remove</strong> the following image?'
-  news_gallery_item_title_new: "Add image to gallery"
- 
+
   # tags
-  news_tags_index_title: "Tags"
-  news_tags_list_empty: "No tags in database"
-  news_tags_list_name: "Name"
-  news_tags_add: "Add New Tag"
-  news_tags_title_new: "New Tag"
-  news_tags_title_edit: "Edit"
-  news_tags_form_label_name: "Name"  
-  news_tags_remove_title: "Remove Tag"
-  news_tags_remove_message: 'Are you sure you want to <strong class="warning">permanently remove</strong> the following tag?'
-  news_tags_button_remove: "Remove Tag"
-  
+  news_tags_index_title: "Marcadores"
+  news_tags_list_empty: "Não existem marcadores registados."
+  news_tags_list_name: "Nome"
+  news_tags_add: "Adicionar novo marcador"
+  news_tag_title_new: "Novo marcador"
+  news_tag_title_edit: "Editar"
+  news_tag_form_label_name: "Nome"  
+  news_tag_remove_title: "Remover marcador"
+  news_tag_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> este marcador?'
+  news_tag_button_remove: "Remover marcador"
+
+  #videos
+  news_video_add: "Adicionar Vídeo"
+  news_video_button_remove: "Remover Vídeo"
+  news_video_remove_title: "Remover Vídeo"
+  news_video_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> esta vídeo?'
+  news_video_list_empty: 'Não existem vídeos registados'
+  news_video_list_title: "Título"
+  news_video_form_label_title: "Título"
+  news_video_form_label_ante_title: "Antetítulo"
+  news_video_form_label_description: "Descrição"
+  news_video_form_label_video_url: "Endereço do vídeo"
+  news_video_title_edit: "Editar"
+  news_video_title_new: "Novo vídeo"
+
+  news_document_folder_index_title: "Documentos"
+  news_document_folder_list_empty: "Não existem documentos registados."
+  news_document_folder_list_name: "Nome"
+  news_document_folder_add: "Adicionar novo documento"
+  news_document_folder_title_new: "Novo documento"
+  news_document_folder_title_edit: "Editar"
+  news_document_folder_form_label_name: "Nome"  
+  news_document_folder_remove_title: "Remover documento"
+  news_document_folder_remove_message: 'Tem a certeza que prentende <strong class="warning">remover permanentemente</strong> este documento?'
+  news_document_folder_button_remove: "Remover documento"
+
   # buttons
-  news_button_cancel: "Cancel"   
+  news_button_cancel: "Cancelar"    
   
   # links
-  news_link_remove_news_alt: "Remove News"
-  news_link_remove_category_alt: "Remove Category"
-  news_link_remove_tag_alt: "Remove Tag"
+  news_link_remove_news_alt: "Remover notícias"
+  news_link_remove_category_alt: "Remover categoria"
+  news_link_remove_tag_alt: "Remover marcador"
   
   # models
-  news_entry: "News"
-  news_category: "Category"
-  news_tag: "Tag"
+  news_entry: "Notícia"
+  news_category: "Categoria"
+  news_tag: "Marcador"

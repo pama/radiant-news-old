@@ -393,7 +393,7 @@ module NewsTags
   desc %{
     Iterates all images from a gallery and returns the html for jquery tools gallery
   }
-  tag 'news:gallery_current_html' do |tag|
+  tag 'news:gallery_current_html' do |tag|    
     to_return = ''    
     images = NewsGalleryImage.find(:all, :conditions => ["news_folder_id = ?", tag.locals.news.news_gallery_image_id  ])
         
